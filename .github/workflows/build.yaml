@@ -34,9 +34,7 @@ jobs:
         # if: github.ref_type == 'tag'
         # Install sshpass, then use it to upload the PDF files via SCP
         run: |
-          sudo apt-get update
-          sudo apt-get install -y sshpass
-          sshpass -p ${{ secrets.SFTP_PASSWORD }} scp -P ${{ secrets.SFTP_PORT }} *.pdf ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:${{ secrets.SFTP_DIRECTORY }}
+          sshpass -p ${{ secrets.SFTP_PASSWORD }} scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P ${{ secrets.SFTP_PORT }} *.pdf ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:${{ secrets.SFTP_DIRECTORY }}
         env:
           SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
