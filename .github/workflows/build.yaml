@@ -31,7 +31,7 @@ jobs:
           path: "*.pdf"
 
       - name: Upload to BayStuRa Webserver via SCP
-        if: github.ref_type == 'tag'
+        # if: github.ref_type == 'tag'
         # Install sshpass, then use it to upload the PDF files via SCP
         run: |
           sudo apt-get update
