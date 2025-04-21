@@ -10,6 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Set up Fontist
+        uses: fontist/setup-fontist@v2
+        
+      - name: Install Poppins
+        run: fontist install "Poppins"
         
       - name: Typst
         uses: lvignoli/typst-action@main
@@ -21,8 +27,8 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
-          name: PDFs
-          path: *.pdf
+          name: PDF
+          path: "*.pdf"
 
       - name: Upload to BayStuRa Webserver via SFTP
         uses: appleboy/scp-action@v0.1.7
@@ -40,4 +46,4 @@ jobs:
         if: github.ref_type == 'tag'
         with:
           name: "${{ github.repository }} — ${{ github.ref_name }}"
-          files: *.pdf
+          files: "*.pdf"
