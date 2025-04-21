@@ -3,6 +3,9 @@ Geschäftsordnung des Bayerischen Landesstudierendenrats
 
 Dieses Repository enthält die Geschäftsordnung sowie zugehörige Dokumente des BayStuRa.
 
+## Aktuelle offizielle Änderungsversion
+[![Geschäftsordnung](https://custom-icon-badges.demolab.com/badge/-Geschäftsordnung-blue?style=for-the-badge&logo=download&logoColor=white "Geschäftsordnung")](https://aktuell.baystura.de/Geschaeftsordnung/geschaeftsordnung.pdf)
+[![Wahlordnung](https://custom-icon-badges.demolab.com/badge/-Wahlordnung-blue?style=for-the-badge&logo=download&logoColor=white "Wahlordnung")](https://aktuell.baystura.de/Geschaeftsordnung/wahlordnung.pdf)
 
 ## Verwendung
 
