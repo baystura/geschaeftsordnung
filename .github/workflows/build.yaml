@@ -21,7 +21,7 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
-          name: PDFs
+          name: PDF
           path: *.pdf
 
       - name: Upload to BayStuRa Webserver via SFTP
