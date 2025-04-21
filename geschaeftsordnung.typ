@@ -1,6 +1,15 @@
 #import "assets/legal.typ": *
 #show: baystura
 
+#show footnote.entry: it => {
+  let loc = it.note.location()
+  numbering(
+    "1 - Erläuterung:",
+    ..counter(footnote).at(loc),
+  )
+  it.note.body
+}
+
 #let version = [1\. Änderungsversion vom 23.03.2025]
 
 #set page(
@@ -72,12 +81,12 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 	#footnote[
 		Dies kann gegebenenfalls die Hochschul-E-Mail-Adresse sein.
 	],
-	eine Bestätigung deren Wahl und deren Amtszeit mitzuteilen.]
-	#S[#at(<s:wahl-delegierte>) gilt für die Abwahl entsprechend.]
-	#S[Vor Ablauf des Geschäftsjahres fordern die Sprecherinnen und Sprecher die Mitglieder schriftlich auf, die Delegierten des folgenden Geschäftsjahres mitzuteilen.]
+	eine Bestätigung deren Wahl und deren Amtszeit mitzuteilen. 
 	#footnote[
 		Die Bestimmungen des Datenschutzrechts sind einzuhalten.
-	]
+	]]
+	#S[#at(<s:wahl-delegierte>) gilt für die Abwahl entsprechend.]
+	#S[Vor Ablauf des Geschäftsjahres fordern die Sprecherinnen und Sprecher die Mitglieder schriftlich auf, die Delegierten des folgenden Geschäftsjahres mitzuteilen.]
 ]
 
 
@@ -208,6 +217,8 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 		+ Rücktritt oder
 		+ Abbestellung.
 	]
+]
+#abs[
 	#S[Endet die Amtszeit vorzeitig, kann für die verbleibende Amtszeit eine neue Geschäftsführung nachbestellt werden. #at(<par:bestellung-gf>) gilt entsprechend.]
 ]
 
@@ -288,28 +299,11 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 	#S[Für jede Kommunikation nach außen bedarf es einer separaten expliziten Zustimmung der Sprecherinnen und Sprecher.]
 ]
 
+#abs[
+	Für die Arbeit in einer Arbeitsgruppe gelten die Bestimmungen von #at(<par:beschlüsse>), #at(<par:sitzungen>) und #at(<par:umlaufverfahren>) entsprechend. Abweichend von Satz 1 finden #at(<par:beschlüsse>, suffix: [Abs. 2]), #at(<par:sitzungen>, suffix: [(2–4)]) sowie #at(<par:umlaufverfahren>, suffix: [Abs. 2]) keine Anwendung. Jede Arbeitsgruppe kann durch Beschluss hiervon abweichende Regelungen treffen, soweit dies erforderlich ist.
+]
 
-#abs[
-	#S[Der BayStuRa kann Arbeitsgruppen für bestimmte Arbeitsgebiete durch Beschluss einrichten oder aufheben.]
-	#S[Arbeitsgruppen unterstützen die Arbeit des BayStuRa und dessen Organe.]
-	#S[Sie treten in ihrer Tätigkeit nicht öffentlich auf.]
-	#S[Der BayStuRa legt im Rahmen der Aufgaben nach #at(<par:aufgaben-baystura>) durch Beschluss das Arbeitsgebiet der Arbeitsgruppe fest.]
-	#S[Studierende an einer Hochschule in Bayern können Mitglieder einer Arbeitsgruppe sein.]
-	#S[Diese haben den Sprecherinnen und Sprechern unverzüglich die Mitwirkung und eine Beendigung der Mitwirkung in einer Arbeitsgruppe in Textform mitzuteilen.]
-	#S[Dritte können in der Arbeitsgruppe mit beratender Stimme mitwirken.]
-	#S[Die Mitwirkung in einer Arbeitsgruppe erfordert das Einvernehmen der Delegation der betreffenden Hochschule; sie wird bis Widerspruch vorausgesetzt.]
-	#S[Hierzu wird die Delegation der jeweiligen Hochschule bei Beitritt formlos informiert.]
-	#S[Der BayStuRa beschließt über eine Arbeitsgruppe mindestens einmal im Geschäftsjahr.]
-	#footnote[
-		Dies bedeutet, dass mindestens einmal im Geschäftsjahr im Hinblick auf eine Arbeitsgruppe ein Beschluss gefasst wird.
-		Dieser Beschluss kann beispielsweise die Fortsetzung der Arbeitsgruppe, eine Änderung des Arbeitsgebiets oder auch die Aufhebung einer Arbeitsgruppe beinhalten.
-	]
-]
-#abs[
-	#S(ref: <s:ag-bestimmungen>)[Für die Arbeit in einer Arbeitsgruppe gelten die Bestimmungen von #at(<par:beschlüsse>), #at(<par:sitzungen>) und #at(<par:anträge>) entsprechend.]
-	#S[Abweichend von #at(<s:ag-bestimmungen>) finden #at(<abs:beschlussfähig>), #at(<par:sitzungen>)#at(<par:sitzungen>, substitution: [(2--4)]) sowie #at(<abs:antragsfrist>) keine Anwendung.]
-	#S[Jede Arbeitsgruppe kann durch Beschluss hiervon abweichende Regelungen treffen, soweit dies erforderlich ist.]
-]
+
 
 
 
@@ -365,8 +359,7 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 	#S[Sie oder er tritt in ihrer oder seiner Tätigkeit ausschließlich im Rahmen ihrer oder seiner Aufgaben und in enger Abstimmung mit den Sprecherinnen und Sprechern ausschließlich für finanzielle Tätigkeiten nach außen auf.]
 ]
 #abs[
-	#S[
-		Aufgabe der Kassenwartin oder des Kassenwarts ist die Wahrnehmung von Verwaltungstätigkeiten im Zusammenhang mit den Finanzen, insbesondere:
+	#S[Aufgabe der Kassenwartin oder des Kassenwarts ist die Wahrnehmung von Verwaltungstätigkeiten im Zusammenhang mit den Finanzen, insbesondere:
 		+ Erstellung eines Abrechnungsberichts zum Ende der Amtszeit,
 		+ Erstellung von Zwischenberichten in der Juli- und Dezembersitzung,
 		+ Verwaltung der Finanzmittel und finanziellen Angelegenheiten des BayStuRa in Abstimmung mit der Hochschule, an der die Kostenstelle eingerichtet ist und
@@ -461,8 +454,11 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 	#S[Soweit die Öffentlichkeit ausgeschlossen ist, können durch Antrag zur Geschäftsordnung einzelne Dritte zur Sitzung zugelassen werden.]
 ]
 #abs[
-	#S[Sitzungen können ganz oder teilweise digital oder rein in Präsenz durchgeführt werden.]
-	#S[Teilnehmende Delegierte und die Sprecherinnen und Sprecher müssen sich in der Sitzung gegenseitig optisch und akustisch wahrnehmen können.]
+	#S[Sitzungen können ganz oder teilweise digital oder rein in Präsenz durchgeführt werden.] //TO-DO: Fußzeile wieder hinzufügen
+	#S[Teilnehmende Delegierte und die Sprecherinnen und Sprecher müssen sich in der Sitzung gegenseitig optisch und akustisch wahrnehmen können.
+	#footnote[
+		Diese Regelung dient insbesondere der erstmaligen Identifizierung der teilnehmenden Delegierten und der Sprecherinnen und Sprecher zu Beginn einer Sitzung. Die Teilnehmenden sind jedoch nicht verpflichtet, durchgehend ihre Kamera und ihr Mikrofon eingeschaltet zu lassen.
+	]]
 	#S[Im Falle einer teilweise oder ganz digitalen Sitzung hat der BayStuRa dafür Sorge zu tragen, dass in seinem Verantwortungsbereich die technischen Voraussetzungen für eine digitale Zuschaltung während der Sitzung durchgehend bestehen.]
 	#S[Ist dies nicht der Fall oder steht nicht fest, ob eine Nichtzuschaltung in den Verantwortungsbereich des BayStuRa oder der oder des betreffenden Delegierten fällt, darf die Sitzung nicht beginnen oder ist sie unverzüglich zu unterbrechen.]
 	#S[Kommt eine digitale Zuschaltung aus Gründen, die nicht im Verantwortungsbereich des BayStuRa liegen, nicht zustande oder wird sie unterbrochen, wirkt sich dies nicht auf die Wirksamkeit eines ohne die betreffende Person gefassten Beschlusses aus.]
@@ -636,7 +632,7 @@ Diese Geschäftsordnung regelt im Rahmen der gesetzlichen Bestimmungen die Arbei
 ]
 #abs[
 	#S[Auf Antrag muss über eine Abberufung entschieden werden.]
-	#S[Hierzu bedarf es einer einfachen Mehrheit]
+	#S[Hierzu bedarf es einer einfachen Mehrheit.]
 ]
 
 
