@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: *.pdf
+          path: "*.pdf"
 
       - name: Upload to BayStuRa Webserver via SFTP
         uses: appleboy/scp-action@v0.1.7
@@ -40,4 +40,4 @@ jobs:
         if: github.ref_type == 'tag'
         with:
           name: "${{ github.repository }} — ${{ github.ref_name }}"
-          files: *.pdf
+          files: "*.pdf"
